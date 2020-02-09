@@ -17,9 +17,8 @@
           "text": "run '${file}'\n"
         }
      },
-     {
+    {
         "key": "F9",
         "command": "macros.executeSelection",
-        }
     },
 ]
