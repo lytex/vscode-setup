@@ -1,0 +1,32 @@
+{
+    "editor.fontFamily": "'Fira Code', 'monospace', monospace, 'Droid Sans Fallback'",
+    "workbench.colorTheme": "Monokai",
+    // Create macros using geddski macros extension
+    // https://marketplace.visualstudio.com/items?itemName=geddski.macros
+    "macros": {
+        "executeSelection": [
+            "editor.action.clipboardCopyAction",
+            "workbench.action.terminal.paste"
+        ]
+    },
+    // https://marketplace.visualstudio.com/items?itemName=Tyriar.shell-launcher
+    "shellLauncher.shells.linux": [
+        {
+            "shell": "/bin/bash",
+            "label": "bash"
+        },
+        {
+            "shell": "/home/julian/.virtualenvs/science/bin/full-activate",
+            "label": "science",
+            "launchName": "science"
+        },
+        {
+            "shell": "/home/julian/.virtualenvs/python-control/bin/full-activate",
+            "label": "python-control",
+            "launchName": "python-control"
+        },
+    ],
+    "terminal.integrated.shell.linux": "/bin/bash",
+    // We don't want to activate the venv on ipython terminals
+    "python.terminal.activateEnvironment": false,
+}

@@ -1,0 +1,25 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    // Ctrl+Q Ctrl+J -> new line in IPython
+    {
+        "key": "ctrl+j",
+        "command": "-workbench.action.togglePanel"
+    },
+    {
+        "key": "ctrl+shift+T",
+        "command": "shellLauncher.launch"
+    },
+    // Emulate spyder run and execute selection
+    {
+        "key": "F5",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+          "text": "run '${file}'\n"
+        }
+     },
+     {
+        "key": "F9",
+        "command": "macros.executeSelection",
+        }
+    },
+]
