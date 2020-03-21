@@ -1,10 +1,5 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
-    // Ctrl+Q Ctrl+J -> new line in IPython
-    {
-        "key": "ctrl+j",
-        "command": "-workbench.action.togglePanel"
-    },
     {
         "key": "ctrl+shift+T",
         "command": "shellLauncher.launch"
@@ -21,4 +16,22 @@
         "key": "F9",
         "command": "macros.executeSelection",
     },
+	// Reassign shortcuts so that we can add a new line in IPython with
+	// Ctrl+J, Ctrl+Q
+	{
+		"key": "ctrl+alt+j",
+		"command": "workbench.action.togglePanel"
+	},
+	{
+		"key": "ctrl+alt+q",
+		"command": "workbench.action.quit"
+	},
+	{
+		"key": "ctrl+q",
+		"command": "-workbench.action.quit"
+	},
+	{
+		"key": "ctrl+j",
+		"command": "-workbench.action.togglePanel"
+        }
 ]
