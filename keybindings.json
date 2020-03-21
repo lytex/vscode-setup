@@ -22,47 +22,58 @@
     // Switch to next/previous/Nth terminal (N=1-9)
     {
         "key": "ctrl+k ctrl+shift+n",
-        "command": "workbench.action.terminal.focusNext"
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus"
     },
     {
         "key": "ctrl+k ctrl+shift+p",
-        "command": "workbench.action.terminal.focusPrevious"
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus"
     },
     {
         "key": "ctrl+shift+1",
-        "command": "workbench.action.terminal.focusAtIndex1"
+        "command": "workbench.action.terminal.focusAtIndex1",
+        "when": "terminalFocus"
     },
     {
         "key": "ctrl+shift+2",
-        "command": "workbench.action.terminal.focusAtIndex2"
+        "command": "workbench.action.terminal.focusAtIndex2",
+        "when": "terminalFocus"
     },
     {
         "key": "ctrl+shift+3",
-        "command": "workbench.action.terminal.focusAtIndex3"
+        "command": "workbench.action.terminal.focusAtIndex3",
+        "when": "terminalFocus"
     },
     {
         "key": "ctrl+shift+4",
-        "command": "workbench.action.terminal.focusAtIndex4"
+        "command": "workbench.action.terminal.focusAtIndex4",
+        "when": "terminalFocus"
     },
     {
         "key": "ctrl+shift+5",
-        "command": "workbench.action.terminal.focusAtIndex5"
+        "command": "workbench.action.terminal.focusAtIndex5",
+        "when": "terminalFocus"
     },
     {
         "key": "ctrl+shift+6",
-        "command": "workbench.action.terminal.focusAtIndex6"
+        "command": "workbench.action.terminal.focusAtIndex6",
+        "when": "terminalFocus"
     },
     {
         "key": "ctrl+shift+7",
-        "command": "workbench.action.terminal.focusAtIndex7"
+        "command": "workbench.action.terminal.focusAtIndex7",
+        "when": "terminalFocus"
     },
     {
         "key": "ctrl+shift+8",
-        "command": "workbench.action.terminal.focusAtIndex8"
+        "command": "workbench.action.terminal.focusAtIndex8",
+        "when": "terminalFocus"
     },
     {
         "key": "ctrl+shift+9",
-        "command": "workbench.action.terminal.focusAtIndex9"
+        "command": "workbench.action.terminal.focusAtIndex9",
+        "when": "terminalFocus"
     },
     {
         "key": "ctrl+shift+1",

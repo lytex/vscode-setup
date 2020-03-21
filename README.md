@@ -15,6 +15,7 @@ Some small scripts and configurations I use to develop python code using VSCode
 
 ## Python
 * [Microsoft Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+* [autoDocstring](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring)
 
 ## Misc
 * [Shell launcher](https://marketplace.visualstudio.com/items?itemName=Tyriar.shell-launcher)
@@ -33,3 +34,6 @@ Some small scripts and configurations I use to develop python code using VSCode
 * `F9` -> Copy-paste selection into terminal
 * `Ctrl+J, Ctrl+Q` -> Create a new line in IPython without executing
 * `Esc, Enter` -> Execute current IPython cell now without having to scroll to the bottom
+
+# Fonts
+* I use [Fira Code](https://github.com/tonsky/FiraCode), a monospaced font with programming ligatures.
