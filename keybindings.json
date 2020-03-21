@@ -1,20 +1,100 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
+    // https://marketplace.visualstudio.com/items?itemName=Tyriar.shell-launcher
     {
         "key": "ctrl+shift+T",
         "command": "shellLauncher.launch"
+    },
+    {
+        "key": "ctrl+shift+`",
+        "command": "-workbench.action.terminal.new"
+    },
+    // Toggle between terminal and editor focus
+    {
+        "key": "ctrl+`",
+        "command": "workbench.action.terminal.focus"
+    },
+    {
+        "key": "ctrl+`",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "terminalFocus"
+    },
+    // Switch to next/previous/Nth terminal (N=1-9)
+    {
+        "key": "ctrl+k ctrl+shift+n",
+        "command": "workbench.action.terminal.focusNext"
+    },
+    {
+        "key": "ctrl+k ctrl+shift+p",
+        "command": "workbench.action.terminal.focusPrevious"
+    },
+    {
+        "key": "ctrl+shift+1",
+        "command": "workbench.action.terminal.focusAtIndex1"
+    },
+    {
+        "key": "ctrl+shift+2",
+        "command": "workbench.action.terminal.focusAtIndex2"
+    },
+    {
+        "key": "ctrl+shift+3",
+        "command": "workbench.action.terminal.focusAtIndex3"
+    },
+    {
+        "key": "ctrl+shift+4",
+        "command": "workbench.action.terminal.focusAtIndex4"
+    },
+    {
+        "key": "ctrl+shift+5",
+        "command": "workbench.action.terminal.focusAtIndex5"
+    },
+    {
+        "key": "ctrl+shift+6",
+        "command": "workbench.action.terminal.focusAtIndex6"
+    },
+    {
+        "key": "ctrl+shift+7",
+        "command": "workbench.action.terminal.focusAtIndex7"
+    },
+    {
+        "key": "ctrl+shift+8",
+        "command": "workbench.action.terminal.focusAtIndex8"
+    },
+    {
+        "key": "ctrl+shift+9",
+        "command": "workbench.action.terminal.focusAtIndex9"
+    },
+    {
+        "key": "ctrl+shift+1",
+        "command": "-editor.action.replaceOne",
+        "when": "editorFocus && findWidgetVisible"
+    },
+    {
+        "key": "ctrl+shift+1",
+        "command": "-search.action.replace",
+        "when": "matchFocus && replaceActive && searchViewletVisible"
+    },
+    {
+        "key": "ctrl+shift+1",
+        "command": "-search.action.replaceAllInFile",
+        "when": "fileMatchFocus && replaceActive && searchViewletVisible"
+    },
+    {
+        "key": "ctrl+shift+1",
+        "command": "-search.action.replaceAllInFolder",
+        "when": "folderMatchFocus && replaceActive && searchViewletVisible"
     },
     // Emulate spyder run and execute selection
     {
         "key": "F5",
         "command": "workbench.action.terminal.sendSequence",
         "args": {
-          "text": "run '${file}'\n"
+          "text": "run '${file}'"
         }
-     },
+    },
     {
         "key": "F9",
-        "command": "macros.executeSelection",
+        "command": "macros.executeSelection"
     },
 	// Reassign shortcuts so that we can add a new line in IPython with
 	// Ctrl+J, Ctrl+Q
@@ -33,5 +113,5 @@
 	{
 		"key": "ctrl+j",
 		"command": "-workbench.action.togglePanel"
-        }
+    }
 ]
