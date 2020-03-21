@@ -1,13 +1,15 @@
-{
-    "editor.fontFamily": "'Fira Code', 'monospace', monospace, 'Droid Sans Fallback'",
+{   
+    "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontLigatures": true,
     "workbench.colorTheme": "Monokai",
+    "terminal.integrated.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     // Create macros using geddski macros extension
     // https://marketplace.visualstudio.com/items?itemName=geddski.macros
     "macros": {
         "executeSelection": [
             "editor.action.clipboardCopyAction",
             "workbench.action.terminal.paste"
-        ]
+        ],
     },
     // https://marketplace.visualstudio.com/items?itemName=Tyriar.shell-launcher
     "shellLauncher.shells.linux": [
@@ -29,4 +31,9 @@
     "terminal.integrated.shell.linux": "/bin/bash",
     // We don't want to activate the venv on ipython terminals
     "python.terminal.activateEnvironment": false,
+    // PEP-8 -> 79 characters per line
+    "editor.rulers": [
+        80,
+        120
+    ]
 }
