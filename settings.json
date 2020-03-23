@@ -35,5 +35,14 @@
     "editor.rulers": [
         80,
         120
-    ]
+    ],
+    // Dark theme settings not working in KDE Plasma
+    "window.zoomLevel": 0,
+    "workbench.colorCustomizations": {
+        "Default Dark+": {
+            "titleBar.activeBackground": "#191919cc",
+            "titleBar.activeForeground":"#ffffff",
+        },
+    },
+    "window.titleBarStyle": "custom"
 }
