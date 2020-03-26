@@ -21,6 +21,7 @@ Some small scripts and configurations I use to develop python code using VSCode
 * [Shell launcher](https://marketplace.visualstudio.com/items?itemName=Tyriar.shell-launcher)
 * [macros](https://marketplace.visualstudio.com/items?itemName=geddski.macros)
 * [sourcetrail](https://marketplace.visualstudio.com/items?itemName=astallinger.sourcetrail)
+* [Color Highlight](https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight)
 
 # Keyboard shortcuts
 ## Integrated terminal
