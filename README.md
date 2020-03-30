@@ -24,6 +24,7 @@ Some small scripts and configurations I use to develop python code using VSCode
 * [Color Highlight](https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight)
 
 # Keyboard shortcuts
+* `ctrl+shift+F5` -> Revert (Reload) File
 ## Integrated terminal
 * `ctrl+shift+T` -> Open a new terminal (shell launcher)
 * ```ctrl+` ``` -> Toggle between terminal and editor focus

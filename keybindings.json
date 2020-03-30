@@ -124,5 +124,9 @@
 	{
 		"key": "ctrl+j",
 		"command": "-workbench.action.togglePanel"
+    },
+    {
+        "key": "ctrl+shift+f5",
+        "command": "workbench.action.files.revert"
     }
 ]
