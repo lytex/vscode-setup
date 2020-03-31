@@ -27,6 +27,7 @@ Some small scripts and configurations I use to develop python code using VSCode
 * `ctrl+shift+F5` -> Revert (Reload) File
 ## Integrated terminal
 * `ctrl+shift+T` -> Open a new terminal (shell launcher)
+* `ctrl+alt+J` -> Toggle terminal
 * ```ctrl+` ``` -> Toggle between terminal and editor focus
 * `ctrl+k ctrl+shift+n` -> Switch to next terminal
 * `ctrl+k ctrl+shift+p` -> Switch to previous terminal
@@ -36,6 +37,8 @@ Some small scripts and configurations I use to develop python code using VSCode
 * `F9` -> Copy-paste selection into terminal
 * `Ctrl+J, Ctrl+Q` -> Create a new line in IPython without executing
 * `Esc, Enter` -> Execute current IPython cell now without having to scroll to the bottom
+* `Ctrl+Q` -> Extract caller's enviroment to the IPython shell. **Note that this it overwrites
+  the predefined shortcut for exiting VSCode**
 
 # Fonts
 * I use [Fira Code](https://github.com/tonsky/FiraCode), a monospaced font with programming ligatures.

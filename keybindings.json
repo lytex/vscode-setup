@@ -113,14 +113,21 @@
 		"key": "ctrl+alt+j",
 		"command": "workbench.action.togglePanel"
 	},
-	{
-		"key": "ctrl+alt+q",
-		"command": "workbench.action.quit"
-	},
-	{
+    {
 		"key": "ctrl+q",
 		"command": "-workbench.action.quit"
-	},
+    },
+    // Sometimes the debugger session cannot use all the python features
+    // see https://github.com/inducer/pudb/issues/103
+    // extract the caller enviroment
+    // pip install git+https://github.com/andyljones/aljpy
+    {
+        "key": "ctrl+q",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+          "text": "from aljpy.debugging import extract; extract()\n"
+        }
+    },
 	{
 		"key": "ctrl+j",
 		"command": "-workbench.action.togglePanel"
