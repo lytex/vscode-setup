@@ -17,11 +17,16 @@ Some small scripts and configurations I use to develop python code using VSCode
 * [Microsoft Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 * [autoDocstring](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring)
 
+## Format/color
+* [TabSanity](https://marketplace.visualstudio.com/items?itemName=jedmao.tabsanity) Navigate or modify soft tabs as if they were hard tabs (e.g. if tab=4spaces you can only move 4spaces back/fwd)
+* [Bracket Pair Colorizer 2](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2)
+* [Monokai Vibrant](https://marketplace.visualstudio.com/items?itemName=s3gf4ult.monokai-vibrant)
+* [Color Highlight](https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight)
+
 ## Misc
 * [Shell launcher](https://marketplace.visualstudio.com/items?itemName=Tyriar.shell-launcher)
 * [macros](https://marketplace.visualstudio.com/items?itemName=geddski.macros)
 * [sourcetrail](https://marketplace.visualstudio.com/items?itemName=astallinger.sourcetrail)
-* [Color Highlight](https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight)
 
 # Keyboard shortcuts
 * `ctrl+shift+F5` -> Revert (Reload) File
