@@ -44,10 +44,17 @@
             "titleBar.activeForeground":"#ffffff",
         },
     },
-    // Avoid clashing with dim yellow brackets from Bracket Pair Colorizer 2
     "editor.tokenColorCustomizations": {
         "[Monokai Vibrant]": {
+            // Avoid clashing with dim yellow brackets from Bracket Pair Colorizer 2
             "strings": "#6060ff"
         },
-    "window.titleBarStyle": "custom"
+        "textMateRules": [{
+        "scope": ["keyword.operator"],
+        // straight ==, ===, !=, etc lines
+        "settings": {
+        "fontStyle": "" 
+        }
+    }]
+    }
 }
