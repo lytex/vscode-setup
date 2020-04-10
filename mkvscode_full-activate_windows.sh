@@ -20,7 +20,6 @@ for venv in $venvs; do
 		echo -e "call $ACTIVATE_PATH\r\ncall conda activate $(basename $venv)\r\nipython3" > "$venv_script"
 	else
 		echo "File already exists at $venv_script" 
-		rm "$venv_script"
 	fi
 
 	if [ ! -x "$venv_script" ]; then
