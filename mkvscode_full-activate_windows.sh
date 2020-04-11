@@ -5,7 +5,7 @@
 
 # Windows strings, use \\
 CONDA_PATH="$LOCALAPPDATA\\Continuum\\Anaconda3"
-ACTIVATE_PATH="$CONDA_PATH\\Scripts\\Activate.bat"
+ACTIVATE_PATH="$CONDA_PATH\\Scripts\\\\Activate.bat"
 
 # bash strings, use /
 CONDA_PATH_BASH="/$(echo $CONDA_PATH | sed s/\\\\/\\//g | sed s/://g)"
