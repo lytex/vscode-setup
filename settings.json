@@ -14,8 +14,8 @@
     // https://marketplace.visualstudio.com/items?itemName=Tyriar.shell-launcher
     "shellLauncher.shells.linux": [
         {
-            "shell": "/bin/bash",
-            "label": "bash"
+            "shell": "/bin/zsh",
+            "label": "zsh"
         },
         {
             "shell": "/home/julian/.virtualenvs/science/bin/full-activate",
@@ -28,7 +28,7 @@
             "launchName": "python-control"
         },
     ],
-    "terminal.integrated.shell.linux": "/bin/bash",
+    "terminal.integrated.shell.linux": "/bin/zsh",
     // We don't want to activate the venv on ipython terminals
     "python.terminal.activateEnvironment": false,
     // PEP-8 -> 79 characters per line
@@ -36,13 +36,18 @@
         80,
         120
     ],
-    // Dark theme settings not working in KDE Plasma
     "window.zoomLevel": 0,
     "workbench.colorCustomizations": {
+        // Dark theme settings not working in KDE Plasma
         "Default Dark+": {
             "titleBar.activeBackground": "#191919cc",
             "titleBar.activeForeground":"#ffffff",
         },
+        // green will clash with function syntax highlighing, don't make it too bright
+        "editor.findMatchBackground": "#00aa00", // Current Match
+        "editor.findMatchHighlightBackground": "#66ff6650", // Other Matches
+        "minimap.findMatchHighlight": "#0ff000", // Matches in minimap
+        "editorOverviewRuler.findMatchForeground": "#0ff000" // Matches in overview ruler
     },
     "editor.tokenColorCustomizations": {
         "[Monokai Vibrant]": {
