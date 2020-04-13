@@ -44,6 +44,33 @@ Some small scripts and configurations I use to develop python code using VSCode
 * `Esc, Enter` -> Execute current IPython cell now without having to scroll to the bottom
 * `Ctrl+Q` -> Extract caller's enviroment to the IPython shell. **Note that this it overwrites
   the predefined shortcut for exiting VSCode**
+## tmux
+* `Ctrl+B` -> `Ctrl+Shift+B` Reassigns `workbench.action.toggleSidebarVisibility` to use `tmux` shortcuts
+* `Ctrl+K, U` -> **Keep unsaved** and close saved files only
+* `Ctrl+K, W` -> **Whack** and close (discard unsaved files)
+
+## vscode tricks
+* `Ctrl+K, Enter` -> **Keep** current file from closing (*italics* means it's opened in preview mode and 
+opening a new file will replace it)
+* `F12` -> Go to Definition 
+* `Ctrl+F12` -> Go to Implementation
+* `Shift+F12` -> Go to References
+
+### refactoring
+* `F2` -> Rename symbol consistently with language syntax
+* `Right click`
+  * Extract method
+  * Extract variable
+
+[vscode cheatsheet](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
+## Common shortcuts
+* `Ctrl+F` -> Search
+* `Ctrl+H` -> Search and replace
+  * `Enter` -> Single replace
+  * `Ctrl+Alt+Enter` -> Replace all
+  * `Alt+R` -> Toggle Regex
+* `Alt+Ctrl+-` -> Back
+* `Ctrl+Shift+-` -> Forward
 
 # Fonts
 * I use [Fira Code](https://github.com/tonsky/FiraCode), a monospaced font with programming ligatures.
