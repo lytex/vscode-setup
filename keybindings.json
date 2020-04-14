@@ -6,7 +6,7 @@
         "command": "shellLauncher.launch"
     },
     {
-        "key": "ctrl+shift+`",
+        "key": "ctrl+`",
         "command": "-workbench.action.terminal.new"
     },
     // Toggle between terminal and editor focus
