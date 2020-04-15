@@ -42,8 +42,10 @@ Some small scripts and configurations I use to develop python code using VSCode
 * `F9` -> Copy-paste selection into terminal
 * `Ctrl+J, Ctrl+Q` -> Create a new line in IPython without executing
 * `Esc, Enter` -> Execute current IPython cell now without having to scroll to the bottom
-* `Ctrl+Q` -> Extract caller's enviroment to the IPython shell. **Note that this it overwrites
-  the predefined shortcut for exiting VSCode**
+## Snippets
+* `Ctrl+B, Ctrl+Q` -> Extract caller's enviroment to the IPython shell.
+* `Ctrl+B, Ctrl+E` -> `from IPython import embed; embed()`
+* `Ctrl+B, Ctrl+B` -> Set Breakpoint with IPython `embed()`
 
 # Fonts
 * I use [Fira Code](https://github.com/tonsky/FiraCode), a monospaced font with programming ligatures.
