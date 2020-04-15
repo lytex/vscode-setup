@@ -108,7 +108,11 @@
         "command": "macros.executeSelection"
     },
 	// Reassign shortcuts so that we can add a new line in IPython with
-	// Ctrl+J, Ctrl+Q
+    // Ctrl+J, Ctrl+Q
+	{
+		"key": "ctrl+j",
+		"command": "-workbench.action.togglePanel"
+    },
 	{
 		"key": "ctrl+alt+j",
 		"command": "workbench.action.togglePanel"
@@ -142,10 +146,6 @@
         "args": {
             "snippet": "\nfrom IPython import embed\nbreakpoint(header=embed())\n"
           }
-    },
-	{
-		"key": "ctrl+j",
-		"command": "-workbench.action.togglePanel"
     },
     {
         "key": "ctrl+shift+f5",
