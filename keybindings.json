@@ -108,7 +108,11 @@
         "command": "macros.executeSelection"
     },
 	// Reassign shortcuts so that we can add a new line in IPython with
-	// Ctrl+J, Ctrl+Q
+    // Ctrl+J, Ctrl+Q
+	{
+		"key": "ctrl+j",
+		"command": "-workbench.action.togglePanel"
+    },
 	{
 		"key": "ctrl+alt+j",
 		"command": "workbench.action.togglePanel"
@@ -122,15 +126,26 @@
     // extract the caller enviroment
     // pip install git+https://github.com/andyljones/aljpy
     {
-        "key": "ctrl+q",
+        "key": "ctrl+b ctrl+q",
         "command": "workbench.action.terminal.sendSequence",
         "args": {
           "text": "from aljpy.debugging import extract; extract()\n"
         }
     },
-	{
-		"key": "ctrl+j",
-		"command": "-workbench.action.togglePanel"
+    {
+        "key": "ctrl+b ctrl+e",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+          "text": "from IPython import embed; embed()\n"
+        }
+    },
+    {
+        "key": "ctrl+b ctrl+b",
+        "command": "editor.action.insertSnippet",
+        "when": "editorTextFocus",
+        "args": {
+            "snippet": "\nfrom IPython import embed\nbreakpoint(header=embed())\n"
+          }
     },
     {
         "key": "ctrl+shift+f5",

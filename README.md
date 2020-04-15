@@ -72,5 +72,10 @@ opening a new file will replace it)
 * `Alt+Ctrl+-` -> Back
 * `Ctrl+Shift+-` -> Forward
 
+## Snippets
+* `Ctrl+B, Ctrl+Q` -> Extract caller's enviroment to the IPython shell.
+* `Ctrl+B, Ctrl+E` -> `from IPython import embed; embed()`
+* `Ctrl+B, Ctrl+B` -> Set Breakpoint with IPython `embed()`
+
 # Fonts
 * I use [Fira Code](https://github.com/tonsky/FiraCode), a monospaced font with programming ligatures.
