@@ -44,6 +44,8 @@ Some small scripts and configurations I use to develop python code using VSCode
 * `Esc, Enter` -> Execute current IPython cell now without having to scroll to the bottom
 * `Ctrl+Q` -> Extract caller's enviroment to the IPython shell. **Note that this it overwrites
   the predefined shortcut for exiting VSCode**
+* [Customize text color](https://stackoverflow.com/questions/14129278/how-do-i-customize-text-color-in-ipython)
+* Move ipython_config.py to `~/.ipython/profile_default/ipython_config.py` (only newer IPython versions have syntax highlighting)
 ## tmux
 * `Ctrl+B` -> `Ctrl+Shift+B` Reassigns `workbench.action.toggleSidebarVisibility` to use `tmux` shortcuts
 * `Ctrl+K, U` -> **Keep unsaved** and close saved files only
