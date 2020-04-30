@@ -17,6 +17,12 @@ Some small scripts and configurations I use to develop python code using VSCode
 * [Microsoft Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 * [autoDocstring](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring)
 
+## Other languages
+* [Microsoft Ansible extension](https://marketplace.visualstudio.com/items?itemName=vscoss.vscode-ansible)
+* [Microsoft Docker extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
+* [Microsft yaml extension](https://marketplace.visualstudio.com/items?itemName=docsmsft.docs-yaml)
+* [Kubernetes ipedrazas extension](https://marketplace.visualstudio.com/items?itemName=ipedrazas.kubernetes-snippets)
+
 ## Format/color
 * [TabSanity](https://marketplace.visualstudio.com/items?itemName=jedmao.tabsanity) Navigate or modify soft tabs as if they were hard tabs (e.g. if tab=4spaces you can only move 4spaces back/fwd)
 * [Bracket Pair Colorizer 2](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2)
@@ -78,6 +84,7 @@ opening a new file will replace it)
 * `Ctrl+B, Ctrl+Q` -> Extract caller's enviroment to the IPython shell.
 * `Ctrl+B, Ctrl+E` -> `from IPython import embed; embed()`
 * `Ctrl+B, Ctrl+B` -> Set Breakpoint with IPython `embed()`
+* `Ctrl+Shift+R` -> Rerun: **Re**load all modules an **run** on IPython `%load_ext autoreload %autoreload run`
 
 # Fonts
 * I use [Fira Code](https://github.com/tonsky/FiraCode), a monospaced font with programming ligatures.
