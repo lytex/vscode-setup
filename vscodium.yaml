@@ -1,0 +1,58 @@
+- hosts: localhost
+  remote_user: kubuntu
+  become: yes
+  vars:
+    virtualenvwrapper_path: "/usr/share/virtualenvwrapper/virtualenvwrapper.sh"
+  tasks:
+  - name: ensure that git is installed
+    apt:
+      name: git
+      state: latest
+  - name: ensure that python3-pip is installed
+    apt:
+      name: python3-pip
+      state: latest
+  - name: 
+    apt:
+      name: virtualenvwrapper
+      state: latest
+  - name: install ipython
+    pip:
+      executable: /usr/bin/pip3
+      name: ipython
+  - name: create ipython3 default profile
+    command: ipython3 profile create
+  - name: copy custom ipython_config.py
+    copy:
+      src: ipython_config.py
+      dest: ~/.ipython/profile_default/ipython_config.py
+############################# zsh setup #############################
+  - name: ensure that zsh is installed
+    apt:
+      name: zsh
+      state: latest
+  - name: copy custom .zshrc
+    copy:
+      src: zshrc
+      dest: ~/.zshrc
+  - name: ensure that fzf is installed
+    apt:
+      name: fzf
+      state: latest
+  - name: ensure that omyzsh is installed
+    git:
+      repo: https://github.com/zsh-users/zsh-autosuggestions
+      dest: ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+############################# vscodium setup #############################
+  - name: add codium gpg
+    apt_key:
+      url: https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg
+  - name: add codium repos
+    apt_repository:
+      repo: deb https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/repos/debs/ vscodium main
+      filename: vscodium
+  - name: install codium
+    apt:
+      name: codium
+      update_cache: yes
+      state: latest
