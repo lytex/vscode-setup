@@ -31,3 +31,8 @@
       - Tyriar.shell-launcher
       - vscoss.vscode-ansible
       - yzhang.markdown-all-in-one
+############################# merge actual file and vscodium #############################
+# use git merge-file: https://git-scm.com/docs/git-merge-file
+############################# install Sourcetrail #############################
+# install sourcetrail, copying it to /usr/share/Sourcetrail/ and then
+# ln -s /usr/share/Sourcetrail/Sourcetrail /usr/bin/Sourcetrail
