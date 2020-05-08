@@ -31,6 +31,30 @@
       - Tyriar.shell-launcher
       - vscoss.vscode-ansible
       - yzhang.markdown-all-in-one
+############################# copy ipython config #############################
+  - name: create ipython3 default profile
+    command: ipython3 profile create default
+  - name: create ipython3 custom profiles
+    command: ipython3 profile create {{ item }}
+    loop:
+      - color
+      - debug
+  - name: copy profiles
+    copy:
+      src: IPython/profile_{{ item }}/ipython_config.py
+      dest: ~/.ipython/profile_{{ item }}/ipython_config.py
+    loop:
+      - color
+      - debug
+############################# copy zsh config #############################
+  - name: copy custom .zshrc
+    copy:
+      src: zshrc
+      dest: ~/.zshrc
+  - name: ensure that omyzsh is installed
+    git:
+      repo: https://github.com/zsh-users/zsh-autosuggestions
+      dest: ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ############################# merge actual file and vscodium #############################
 # use git merge-file: https://git-scm.com/docs/git-merge-file
 ############################# install Sourcetrail #############################
