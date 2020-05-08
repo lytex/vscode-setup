@@ -33,6 +33,7 @@ Some small scripts and configurations I use to develop python code using VSCode
 * [Shell launcher](https://marketplace.visualstudio.com/items?itemName=Tyriar.shell-launcher)
 * [macros](https://marketplace.visualstudio.com/items?itemName=geddski.macros)
 * [sourcetrail](https://marketplace.visualstudio.com/items?itemName=astallinger.sourcetrail)
+* [vscode icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons)
 
 # Keyboard shortcuts
 * `ctrl+shift+F5` -> Revert (Reload) File
