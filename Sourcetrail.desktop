@@ -1,0 +1,17 @@
+[Desktop Entry]
+Version=1.0
+Name=Sourcetrail
+Exec=Sourcetrail
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=sourcetrail
+Categories=GNOME;Development
+MimeType=
+StartupNotify=true
+Actions=
+#Actions=open-project;
+
+#[Desktop Action open-project]
+#Name=Open existing project
+#Exec=Sourcetrail %f
