@@ -1,6 +1,17 @@
 # vscode-setup
 Some small scripts and configurations I use to develop python code using VSCode
 
+## Ansible setup
+Running `sudo ansible-playbook root_install.yaml` will:
+* install git, python3-pip, virtualenvwrapper, ipython
+* install zsh, fzf
+* install vscodium
+* install Sourcetrail
+* copy Fura Mono Nerd Font and Fira Code
+Running `ansible-playbook user_install.yaml` setting will:
+* Install all the vscodium plugins that I use
+* create color and debug IPython profiles
+
 # Useful vscode extensions
 ## Git
 * [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
