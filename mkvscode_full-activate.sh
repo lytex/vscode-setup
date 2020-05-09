@@ -4,7 +4,7 @@ for venv in $venvs; do
 	venv_script="$venv/bin/full-activate"
 	if [ ! -f "$venv_script" ]; then
 		echo "Creating full-activate script at $venv_script"
-		echo -e ". $venv/bin/activate\nipython3" > "$venv_script"
+		echo -e ". $venv/bin/activate\nipython3 --profile=color" > "$venv_script"
 	else
 		echo "File already exists at $venv/bin/full-activate"  
 	fi
