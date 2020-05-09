@@ -2,7 +2,7 @@
     "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontLigatures": "'ss02', 'ss03', 'ss06', 'zero'",
     "workbench.colorTheme": "Monokai Vibrant",
-    "terminal.integrated.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "terminal.integrated.fontFamily": "'FuraMono Nerd Font', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     // Create macros using geddski macros extension
     // https://marketplace.visualstudio.com/items?itemName=geddski.macros
     "macros": {
