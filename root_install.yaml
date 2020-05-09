@@ -71,12 +71,13 @@
 ############################# install fonts  #############################
   # TODO Install fonts automatically instead of only download them
   - name: clone tree of nerd-fonts
-    command: git clone --depth 1 --no-checkout --filter=blob:none https://github.com/ryanoasis/nerd-fonts
+    command:
+      cmd: git clone --depth 1 --no-checkout --filter=blob:none https://github.com/ryanoasis/nerd-fonts
+      creates: nerd-fonts
   - name: checkout Fura Mono Nerd Font files
     shell: 
       chdir: nerd-fonts
       cmd: "echo 'patched-fonts/FiraCode' >> .git/info/sparse-checkout && git config core.sparseCheckout true && git checkout master -- patched-fonts/FiraMono"
-      creates: nerd-fonts
   # Simple cloning is faster than cloning the tree and checking out only the necessary files
   # Now is roughly 35s vs 45s
   - name: clone Fira Code
