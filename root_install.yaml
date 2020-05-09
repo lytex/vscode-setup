@@ -2,9 +2,8 @@
   remote_user: kubuntu
   vars:
     HOME: /home/kubuntu
-  become: yes
-  vars:
     virtualenvwrapper_path: "/usr/share/virtualenvwrapper/virtualenvwrapper.sh"
+  become: yes
   tasks:
   - name: ensure that git is installed
     apt:
@@ -14,11 +13,11 @@
     apt:
       name: python3-pip
       state: latest
-  - name: 
+  - name: ensure that virtualenvwrapper is installed
     apt:
       name: virtualenvwrapper
       state: latest
-  - name: install ipython
+  - name: ensure that ipython is installed
     pip:
       executable: /usr/bin/pip3
       name: ipython
@@ -44,3 +43,43 @@
       name: codium
       update_cache: yes
       state: latest
+############################# install Sourcetrail #############################
+  - name: install curl
+    apt:
+      name: curl
+      state: latest
+  - name: get sourcetrail lastest version
+    shell:
+      cmd: "curl --silent https://github.com/CoatiSoftware/Sourcetrail/releases/latest | grep -Eo 'href=\"(.*)\"' | grep -Eo '[0-9]+\\.[0-9]+\\.[0-9]+'"
+      warn: no
+    register: sourcetrail_latest
+  - name: get sourcetrail package
+    get_url:
+      url: "https://github.com/CoatiSoftware/Sourcetrail/releases/download/{{ sourcetrail_latest.stdout }}/Sourcetrail_{{ sourcetrail_latest.stdout |  replace('.','_') }}_Linux_64bit.tar.gz"
+      dest: "/tmp/Sourcetrail_{{ sourcetrail_latest.stdout |  replace('.','_') }}_Linux_64bit.tar.gz"
+  - name: extract Sourcetrail
+    command:
+      cmd: "tar zfx /tmp/Sourcetrail_{{ sourcetrail_latest.stdout |  replace('.','_')}}_Linux_64bit.tar.gz -C /usr/share"
+      creates: /usr/share/Sourcetrail
+      warn: no
+  - name: add link Sourcetrail to /usr/bin/
+    file:
+      state: link
+      src: "/usr/share/Sourcetrail/Sourcetrail.sh"
+      dest: "/usr/bin/Sourcetrail"
+
+############################# install fonts  #############################
+  # TODO Install fonts automatically instead of only download them
+  - name: clone tree of nerd-fonts
+    command: git clone --depth 1 --no-checkout --filter=blob:none https://github.com/ryanoasis/nerd-fonts
+  - name: checkout Fura Mono Nerd Font files
+    shell: 
+      chdir: nerd-fonts
+      cmd: "echo 'patched-fonts/FiraCode' >> .git/info/sparse-checkout && git config core.sparseCheckout true && git checkout master -- patched-fonts/FiraMono"
+      creates: nerd-fonts
+  # Simple cloning is faster than cloning the tree and checking out only the necessary files
+  # Now is roughly 35s vs 45s
+  - name: clone Fira Code
+    git:
+      repo: https://github.com/tonsky/FiraCode
+      dest: FiraCode
