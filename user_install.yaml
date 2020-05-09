@@ -1,5 +1,7 @@
 - hosts: localhost
   remote_user: kubuntu
+  vars:
+    ZSH_CUSTOM: "~/.oh-my-zsh/custom"
   tasks:
 ############################# install all extensions #############################
   - name: install all vscodium extensions
@@ -51,12 +53,15 @@
     copy:
       src: zshrc
       dest: ~/.zshrc
-  - name: ensure that omyzsh is installed
+  - name: ensure that ohmyzsh is installed
+    command: sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  - name: ensure that zsh-autosuggestions is installed
     git:
       repo: https://github.com/zsh-users/zsh-autosuggestions
-      dest: ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+      dest: "{{ ZSH_CUSTOM }}/plugins/zsh-autosuggestions"
+  - name: ensure that zsh-syntax-highlighting is installed
+    git:
+      repo: https://github.com/zsh-users/zsh-syntax-highlighting
+      dest: "{{ ZSH_CUSTOM }}/plugins/zsh-syntax-highlighting"
 ############################# merge actual file and vscodium #############################
 # use git merge-file: https://git-scm.com/docs/git-merge-file
-############################# install Sourcetrail #############################
-# install sourcetrail, copying it to /usr/share/Sourcetrail/ and then
-# ln -s /usr/share/Sourcetrail/Sourcetrail /usr/bin/Sourcetrail
