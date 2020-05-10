@@ -7,10 +7,13 @@ Running `sudo ansible-playbook root_install.yaml` will:
 * install zsh, fzf
 * install vscodium
 * install Sourcetrail
-* copy Fura Mono Nerd Font and Fira Code
+* install Fura Mono Nerd Font and Fira Code
+
 Running `ansible-playbook user_install.yaml` setting will:
-* Install all the vscodium plugins that I use
+* Install all the vscodium plugins that I use (see list below)
 * create color and debug IPython profiles
+* Install zsh-autosuggestions and zsh-syntax-highlighting
+* Install zsh powerlevel10k theme
 
 # Useful vscode extensions
 ## Git
