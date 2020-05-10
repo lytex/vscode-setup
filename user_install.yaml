@@ -3,6 +3,10 @@
   vars:
     ZSH_CUSTOM: "~/.oh-my-zsh/custom"
   tasks:
+  - name: ensure compare_and_merge.sh is executable
+    file:
+      path: compare_and_merge.sh
+      mode: +x
 ############################# install all extensions #############################
   - name: install all vscodium extensions
     command: codium --install-extension {{ item }}
@@ -18,7 +22,6 @@
       - huizhou.githd
       - ipedrazas.kubernetes-snippets
       - jedmao.tabsanity
-      - krvajalm.linter-gfortran
       - mhutchie.git-graph
       - mkloubert.vscode-kanban
       - ms-azuretools.vscode-docker
@@ -50,9 +53,15 @@
       - debug
 ############################# copy zsh config #############################
   - name: copy custom .zshrc
-    copy:
-      src: zshrc
-      dest: ~/.zshrc
+    shell: "./compare_and_merge.sh ~/.zshrc zshrc"
+    register: compare_and_merge
+  - name:
+    debug: var=compare_and_merge.stdout_lines
+  - name: ensure that powerlevel10k is installed
+    git:
+      repo: https://github.com/romkatv/powerlevel10k.git
+      dest: "{{ ZSH_CUSTOM }}/themes/powerlevel10k"
+      depth: 1
   - name: check if oh-my-zsh directory exists
     stat:
       path: ~/.oh-my-zsh
@@ -69,13 +78,13 @@
       repo: https://github.com/zsh-users/zsh-syntax-highlighting
       dest: "{{ ZSH_CUSTOM }}/plugins/zsh-syntax-highlighting"
 ############################# compare_and_merge current files and vscode-setup #############################
-  - name: ensure compare_and_merge.sh is executable
-    file:
-      path: compare_and_merge.sh
-      mode: +x
   - name: compare and merge config.json
-    shell:
-     cmd: "./compare_and_merge.sh ~/.config/VSCodium/User/settings.json settings.json"
+    shell: "./compare_and_merge.sh ~/.config/VSCodium/User/settings.json settings.json"
+    register: compare_and_merge
+  - name:
+    debug: var=compare_and_merge.stdout_lines
   - name: merge keybindings.json
-    shell:
-     cmd: "./compare_and_merge.sh ~/.config/VSCodium/User/keybindings.json keybindings.json"
+    shell: "./compare_and_merge.sh ~/.config/VSCodium/User/keybindings.json keybindings.json"
+    register: compare_and_merge
+  - name:
+    debug: var=compare_and_merge.stdout_lines
