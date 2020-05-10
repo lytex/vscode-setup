@@ -68,30 +68,14 @@
     git:
       repo: https://github.com/zsh-users/zsh-syntax-highlighting
       dest: "{{ ZSH_CUSTOM }}/plugins/zsh-syntax-highlighting"
-############################# merge actual file and vscodium #############################
-  - name: check if settings file exists
-    stat:
-      path: ~/.config/VSCodium/User/settings.json
-    register: vscodium_settings
-  - name: merge config.json
+############################# compare_and_merge current files and vscode-setup #############################
+  - name: ensure compare_and_merge.sh is executable
+    file:
+      path: compare_and_merge.sh
+      mode: +x
+  - name: compare and merge config.json
     shell:
-     cmd: "git merge-file -L user -L vscode-setup ~/.config/VSCodium/User/settings.json settings.json ~/.config/VSCodium/User/settings.json"
-    when: vscodium_settings.stat.exists == true
-  - name: copy config.json without merging
-    copy:
-      src: settings.json
-      dest: ~/.config/VSCodium/User/settings.json
-    when: vscodium_settings.stat.exists == false
-  - name: check if keybindings file exists
-    stat:
-      path: ~/.config/VSCodium/User/keybindings.json
-    register: vscodium_keybindings
+     cmd: "./compare_and_merge.sh ~/.config/VSCodium/User/settings.json settings.json"
   - name: merge keybindings.json
     shell:
-     cmd: "git merge-file -L user -L vscode-setup $HOME/.config/VSCodium/User/keybindings.json settings.json $HOME/.config/VSCodium/User/keybindings.json"
-    when: vscodium_keybindings.stat.exists == true
-  - name: copy keybindings.json without merging
-    copy:
-      src: settings.json
-      dest: ~/.config/VSCodium/User/settings.json
-    when: vscodium_keybindings.stat.exists == false
+     cmd: "./compare_and_merge.sh ~/.config/VSCodium/User/keybindings.json keybindings.json"
