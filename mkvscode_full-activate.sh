@@ -1,3 +1,5 @@
+#!/bin/bash
+
 venvs=`echo $HOME/.virtualenvs/*/`
 for venv in $venvs; do
 	venv=`echo ${venv:: -1}`
@@ -6,7 +8,13 @@ for venv in $venvs; do
 		echo "Creating full-activate script at $venv_script"
 		echo -e ". $venv/bin/activate\nipython3 --profile=color" > "$venv_script"
 	else
-		echo "File already exists at $venv/bin/full-activate"  
+		echo "File already exists at $venv/bin/full-activate"
+                echo "Do you whant to replace it? [y/N]"
+                read replace
+                if [ $replace == "y" -o $replace == "Y" ]; then
+                    rm "$venv/bin/full-activate"
+		    echo -e ". $venv/bin/activate\nipython3 --profile=color" > "$venv_script"
+                fi
 	fi
 
 	if [ ! -x "$venv_script" ]; then
