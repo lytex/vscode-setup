@@ -104,6 +104,10 @@ opening a new file will replace it)
 # Fonts
 * I use [Fira Code](https://github.com/tonsky/FiraCode), a monospaced font with programming ligatures.
 
+# Command Menu
+* Open with `Ctrl+Shift+P`
+* `Terminal: Rename` to rename current integrated terminal
+
 # Tricks
 ## pylint
 *  To select the proper pylint path for your project, set .vscode/settings.json -> `"python.linting.pylintPath": "cd /home/user/full/path/to/code && pylint"`
