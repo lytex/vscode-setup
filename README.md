@@ -15,6 +15,18 @@ Running `ansible-playbook user_install.yaml` setting will:
 * Install zsh-autosuggestions and zsh-syntax-highlighting
 * Install zsh powerlevel10k theme
 
+# mkvscode_full-activate
+* This script
+* At the top of the script, ``` venvs=`echo $HOME/.virtualenvs/*/` ``` defines where to look for virtual environments, which by default is the [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/) `WORKON_HOME` variable. If you want to change your virtual enviroment location, you have to change this path. However, the script assumes your virtual environment are all located under a common top directory:
+
+```
+/foo/bar/myproject/bin/activate
+/foo/bar/http_requester/bin/activate
+/foo/bar/scrapy/bin/activate
+...
+```
+in this case, ``` venvs=`echo /foo/bar/*/` ```
+
 # Useful vscode extensions
 ## Git
 * [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)

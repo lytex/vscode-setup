@@ -1,6 +1,6 @@
 #!/bin/bash
 
-venvs=`echo $HOME/.virtualenvs/*/`
+venvs=`echo $WORKON_HOME/*/`
 for venv in $venvs; do
 	venv=`echo ${venv:: -1}`
 	venv_script="$venv/bin/full-activate"
