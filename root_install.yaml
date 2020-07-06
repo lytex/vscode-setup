@@ -1,7 +1,6 @@
 - hosts: localhost
   remote_user: kubuntu
   vars:
-    HOME: /home/kubuntu
     virtualenvwrapper_path: "/usr/share/virtualenvwrapper/virtualenvwrapper.sh"
   become: yes
   tasks:
