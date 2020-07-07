@@ -1,7 +1,6 @@
 - hosts: localhost
   remote_user: kubuntu
   vars:
-    HOME: /home/kubuntu
     virtualenvwrapper_path: "/usr/share/virtualenvwrapper/virtualenvwrapper.sh"
   become: yes
   tasks:
@@ -44,7 +43,7 @@
       update_cache: yes
       state: latest
 ############################# install Sourcetrail #############################
-  - name: install curl
+  - name: ensure that curl is installed
     apt:
       name: curl
       state: latest
@@ -59,8 +58,7 @@
       dest: "/tmp/Sourcetrail_{{ sourcetrail_latest.stdout |  replace('.','_') }}_Linux_64bit.tar.gz"
   - name: extract Sourcetrail
     command:
-      cmd: "tar zfx /tmp/Sourcetrail_{{ sourcetrail_latest.stdout |  replace('.','_')}}_Linux_64bit.tar.gz -C /usr/share"
-      creates: /usr/share/Sourcetrail
+      cmd: "tar zfx /tmp/Sourcetrail_{{ sourcetrail_latest.stdout |  replace('.','_')}}_Linux_64bit.tar.gz -C /usr/share --overwrite"
       warn: no
   - name: add link Sourcetrail to /usr/bin/
     file:
