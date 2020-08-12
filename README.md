@@ -63,6 +63,7 @@ in this case, ``` venvs=`echo /foo/bar/*/` ```
 
 # Keyboard shortcuts
 * `ctrl+shift+F5` -> Revert (Reload) File
+* `alt+Z` -> Toggle word wrapping
 ## Integrated terminal
 * `ctrl+shift+T` -> Open a new terminal (shell launcher)
 * `ctrl+alt+J` -> Toggle terminal
