@@ -20,7 +20,7 @@
         "key": "F5",
         "command": "workbench.action.terminal.sendSequence",
         "args": {
-          "text": "run '${file}'"
+          "text": "%run '${file}'"
         }
     },
     {
