@@ -29,7 +29,8 @@
     apt:
       name: fzf
       state: latest
-############################# vscodium setup #############################
+############################# codium setup #############################
+# workaround: if codium setup fails, sudo rm /etc/apt/sources.list.d/vscodium.list
   - name: add codium gpg
     shell:
       cmd: "wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | gpg --dearmor | sudo dd of=/etc/apt/trusted.gpg.d/vscodium-archive-keyring.gpg"
