@@ -31,11 +31,12 @@
       state: latest
 ############################# vscodium setup #############################
   - name: add codium gpg
-    apt_key:
-      url: https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg
+    shell:
+      cmd: "wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | gpg --dearmor | sudo dd of=/etc/apt/trusted.gpg.d/vscodium-archive-keyring.gpg"
+      warn: false
   - name: add codium repos
     apt_repository:
-      repo: deb https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/repos/debs/ vscodium main
+      repo: deb [signed-by=/etc/apt/trusted.gpg.d/vscodium-archive-keyring.gpg] https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/debs/ vscodium main 
       filename: vscodium
   - name: install codium
     apt:
