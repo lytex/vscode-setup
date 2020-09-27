@@ -3,89 +3,90 @@
   vars:
     ZSH_CUSTOM: "~/.oh-my-zsh/custom"
   tasks:
-  - name: ensure compare_and_merge.sh is executable
-    file:
-      path: compare_and_merge.sh
-      mode: +x
-############################# install all extensions #############################
-  - name: install all vscodium extensions
-    command: codium --install-extension {{ item }}
-    loop:
-      - astallinger.sourcetrail
-      - coddx.coddx-alpha
-      - CoenraadS.bracket-pair-colorizer-2
-      - docsmsft.docs-yaml
-      - donjayamanne.githistory
-      - eamodio.gitlens
-      - emmanuelbeziat.vscode-great-icons
-      - geddski.macros
-      - huizhou.githd
-      - ipedrazas.kubernetes-snippets
-      - jedmao.tabsanity
-      - mhutchie.git-graph
-      - mkloubert.vscode-kanban
-      - ms-azuretools.vscode-docker
-      - ms-kubernetes-tools.vscode-kubernetes-tools
-      - ms-python.python
-      - naumovs.color-highlight
-      - njpwerner.autodocstring
-      - redhat.vscode-yaml
-      - s3gf4ult.monokai-vibrant
-      - shaharkazaz.git-merger
-      - shd101wyy.markdown-preview-enhanced
-      - tomoki1207.pdf
-      - Tyriar.shell-launcher
-      - vscoss.vscode-ansible
-      - yzhang.markdown-all-in-one
-############################# copy ipython config #############################
-  - name: create ipython3 default profile
-    command: ipython3 profile create default
-  - name: create ipython3 custom profiles
-    command: ipython3 profile create {{ item }}
-    loop:
-      - color
-      - debug
-  - name: copy profiles
-    copy:
-      src: IPython/profile_{{ item }}/ipython_config.py
-      dest: ~/.ipython/profile_{{ item }}/ipython_config.py
-    loop:
-      - color
-      - debug
-############################# copy zsh config #############################
-  - name: check if oh-my-zsh directory exists
-    stat:
-      path: ~/.oh-my-zsh
-    register: oh_my_zsh
-  - name: ensure that ohmyzsh is installed
-    shell: sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    when: oh_my_zsh.stat.exists == false
-  - name: ensure that powerlevel10k is installed
-    git:
-      repo: https://github.com/romkatv/powerlevel10k.git
-      dest: "{{ ZSH_CUSTOM }}/themes/powerlevel10k"
-      depth: 1
-  - name: ensure that zsh-autosuggestions is installed
-    git:
-      repo: https://github.com/zsh-users/zsh-autosuggestions
-      dest: "{{ ZSH_CUSTOM }}/plugins/zsh-autosuggestions"
-  - name: ensure that zsh-syntax-highlighting is installed
-    git:
-      repo: https://github.com/zsh-users/zsh-syntax-highlighting
-      dest: "{{ ZSH_CUSTOM }}/plugins/zsh-syntax-highlighting"
-  - name: copy custom .zshrc
-    shell: "./compare_and_merge.sh ~/.zshrc zshrc"
-    register: compare_and_merge
-  - name:
-    debug: var=compare_and_merge.stdout_lines
-############################# compare_and_merge current files and vscode-setup #############################
-  - name: compare and merge config.json
-    shell: "./compare_and_merge.sh ~/.config/VSCodium/User/settings.json settings.json"
-    register: compare_and_merge
-  - name:
-    debug: var=compare_and_merge.stdout_lines
-  - name: merge keybindings.json
-    shell: "./compare_and_merge.sh ~/.config/VSCodium/User/keybindings.json keybindings.json"
-    register: compare_and_merge
-  - name:
-    debug: var=compare_and_merge.stdout_lines
+    - name: ensure compare_and_merge.sh is executable
+      file:
+        path: compare_and_merge.sh
+        mode: +x
+    ############################# install all extensions #############################
+    - name: install all vscodium extensions
+      command: codium --install-extension {{ item }}
+      loop:
+        - astallinger.sourcetrail
+        - coddx.coddx-alpha
+        - CoenraadS.bracket-pair-colorizer-2
+        - docsmsft.docs-yaml
+        - donjayamanne.githistory
+        - eamodio.gitlens
+        - emmanuelbeziat.vscode-great-icons
+        - geddski.macros
+        - huizhou.githd
+        - ipedrazas.kubernetes-snippets
+        - jedmao.tabsanity
+        - mhutchie.git-graph
+        - mkloubert.vscode-kanban
+        - ms-azuretools.vscode-docker
+        - ms-kubernetes-tools.vscode-kubernetes-tools
+        - ms-python.python
+        - naumovs.color-highlight
+        - njpwerner.autodocstring
+        - redhat.vscode-yaml
+        - s3gf4ult.monokai-vibrant
+        - shaharkazaz.git-merger
+        - shd101wyy.markdown-preview-enhanced
+        - tomoki1207.pdf
+        - Tyriar.shell-launcher
+        - vscodevim.vim
+        - vscoss.vscode-ansible
+        - yzhang.markdown-all-in-one
+    ############################# copy ipython config #############################
+    - name: create ipython3 default profile
+      command: ipython3 profile create default
+    - name: create ipython3 custom profiles
+      command: ipython3 profile create {{ item }}
+      loop:
+        - color
+        - debug
+    - name: copy profiles
+      copy:
+        src: IPython/profile_{{ item }}/ipython_config.py
+        dest: ~/.ipython/profile_{{ item }}/ipython_config.py
+      loop:
+        - color
+        - debug
+    ############################# copy zsh config #############################
+    - name: check if oh-my-zsh directory exists
+      stat:
+        path: ~/.oh-my-zsh
+      register: oh_my_zsh
+    - name: ensure that ohmyzsh is installed
+      shell: sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+      when: oh_my_zsh.stat.exists == false
+    - name: ensure that powerlevel10k is installed
+      git:
+        repo: https://github.com/romkatv/powerlevel10k.git
+        dest: "{{ ZSH_CUSTOM }}/themes/powerlevel10k"
+        depth: 1
+    - name: ensure that zsh-autosuggestions is installed
+      git:
+        repo: https://github.com/zsh-users/zsh-autosuggestions
+        dest: "{{ ZSH_CUSTOM }}/plugins/zsh-autosuggestions"
+    - name: ensure that zsh-syntax-highlighting is installed
+      git:
+        repo: https://github.com/zsh-users/zsh-syntax-highlighting
+        dest: "{{ ZSH_CUSTOM }}/plugins/zsh-syntax-highlighting"
+    - name: copy custom .zshrc
+      shell: "./compare_and_merge.sh ~/.zshrc zshrc"
+      register: compare_and_merge
+    - name:
+      debug: var=compare_and_merge.stdout_lines
+    ############################# compare_and_merge current files and vscode-setup #############################
+    - name: compare and merge config.json
+      shell: "./compare_and_merge.sh ~/.config/VSCodium/User/settings.json settings.json"
+      register: compare_and_merge
+    - name:
+      debug: var=compare_and_merge.stdout_lines
+    - name: merge keybindings.json
+      shell: "./compare_and_merge.sh ~/.config/VSCodium/User/keybindings.json keybindings.json"
+      register: compare_and_merge
+    - name:
+      debug: var=compare_and_merge.stdout_lines
