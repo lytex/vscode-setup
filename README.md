@@ -1,6 +1,9 @@
 # vscode-setup
 Some small scripts and configurations I use to develop python code using VSCode
 
+## disable vim mode
+`Ctrl+K, Ctrl+V` to toggle vim mode
+
 ## Ansible setup
 Running `sudo ansible-playbook root_install.yaml` will:
 * install git, python3-pip, virtualenvwrapper, ipython

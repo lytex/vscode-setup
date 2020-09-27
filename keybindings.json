@@ -20,7 +20,7 @@
         "key": "F5",
         "command": "workbench.action.terminal.sendSequence",
         "args": {
-          "text": "%run '${file}'"
+            "text": "%run '${file}'"
         }
     },
     {
@@ -31,22 +31,22 @@
         "key": "ctrl+shift+r",
         "command": "workbench.action.terminal.sendSequence",
         "args": {
-          "text": "%load_ext autoreload\n%autoreload\nrun ''${file}'"
+            "text": "%load_ext autoreload\n%autoreload\n%run ''${file}'"
         }
     },
-	// Reassign shortcuts so that we can add a new line in IPython with
+    // Reassign shortcuts so that we can add a new line in IPython with
     // Ctrl+J, Ctrl+Q
-	{
-		"key": "ctrl+j",
-		"command": "-workbench.action.togglePanel"
-    },
-	{
-		"key": "ctrl+alt+j",
-		"command": "workbench.action.togglePanel"
-	},
     {
-		"key": "ctrl+q",
-		"command": "-workbench.action.quit"
+        "key": "ctrl+j",
+        "command": "-workbench.action.togglePanel"
+    },
+    {
+        "key": "ctrl+alt+j",
+        "command": "workbench.action.togglePanel"
+    },
+    {
+        "key": "ctrl+q",
+        "command": "-workbench.action.quit"
     },
     // Sometimes the debugger session cannot use all the python features
     // see https://github.com/inducer/pudb/issues/103
@@ -56,14 +56,14 @@
         "key": "ctrl+b ctrl+q",
         "command": "workbench.action.terminal.sendSequence",
         "args": {
-          "text": "from aljpy.debugging import extract; extract()\n"
+            "text": "from aljpy.debugging import extract; extract()\n"
         }
     },
     {
         "key": "ctrl+b ctrl+e",
         "command": "workbench.action.terminal.sendSequence",
         "args": {
-          "text": "from IPython import embed; embed()\n"
+            "text": "from IPython import embed; embed()\n"
         }
     },
     {
@@ -72,7 +72,7 @@
         "when": "editorTextFocus",
         "args": {
             "snippet": "\nfrom IPython import embed\nbreakpoint(header=embed())"
-          }
+        }
     },
     {
         "key": "ctrl+shift+f5",
@@ -83,62 +83,62 @@
         "key": "cmd+alt+shift+i",
         "command": "editor.action.inspectTMScopes"
     },
- // Switch to next/previous/Nth terminal (N=1-9)
- {
-    "key": "ctrl+k ctrl+shift+n",
-    "command": "workbench.action.terminal.focusNext",
-    "when": "terminalFocus"
-},
-{
-    "key": "ctrl+k ctrl+shift+p",
-    "command": "workbench.action.terminal.focusPrevious",
-    "when": "terminalFocus"
-},
-{
-    "key": "ctrl+shift+1",
-    "command": "workbench.action.terminal.focusAtIndex1",
-    "when": "terminalFocus"
-},
-{
-    "key": "ctrl+shift+2",
-    "command": "workbench.action.terminal.focusAtIndex2",
-    "when": "terminalFocus"
-},
-{
-    "key": "ctrl+shift+3",
-    "command": "workbench.action.terminal.focusAtIndex3",
-    "when": "terminalFocus"
-},
-{
-    "key": "ctrl+shift+4",
-    "command": "workbench.action.terminal.focusAtIndex4",
-    "when": "terminalFocus"
-},
-{
-    "key": "ctrl+shift+5",
-    "command": "workbench.action.terminal.focusAtIndex5",
-    "when": "terminalFocus"
-},
-{
-    "key": "ctrl+shift+6",
-    "command": "workbench.action.terminal.focusAtIndex6",
-    "when": "terminalFocus"
-},
-{
-    "key": "ctrl+shift+7",
-    "command": "workbench.action.terminal.focusAtIndex7",
-    "when": "terminalFocus"
-},
-{
-    "key": "ctrl+shift+8",
-    "command": "workbench.action.terminal.focusAtIndex8",
-    "when": "terminalFocus"
-},
-{
-    "key": "ctrl+shift+9",
-    "command": "workbench.action.terminal.focusAtIndex9",
-    "when": "terminalFocus"
-},
+    // Switch to next/previous/Nth terminal (N=1-9)
+    {
+        "key": "ctrl+k ctrl+shift+n",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+shift+p",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+1",
+        "command": "workbench.action.terminal.focusAtIndex1",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+2",
+        "command": "workbench.action.terminal.focusAtIndex2",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+3",
+        "command": "workbench.action.terminal.focusAtIndex3",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+4",
+        "command": "workbench.action.terminal.focusAtIndex4",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+5",
+        "command": "workbench.action.terminal.focusAtIndex5",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+6",
+        "command": "workbench.action.terminal.focusAtIndex6",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+7",
+        "command": "workbench.action.terminal.focusAtIndex7",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+8",
+        "command": "workbench.action.terminal.focusAtIndex8",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+9",
+        "command": "workbench.action.terminal.focusAtIndex9",
+        "when": "terminalFocus"
+    },
     // tmux keybindings, note some are keyboard-layout dependent.
     // activate them only when we are not in the terminal so that we can keep on
     // using tmux there.
@@ -245,5 +245,19 @@
         "key": "ctrl+shift+1",
         "command": "-search.action.replaceAllInFolder",
         "when": "folderMatchFocus && replaceActive && searchViewletVisible"
-    }
+    },
+    {
+        "key": "ctrl+k ctrl+v",
+        "command": "toggleVim"
+    },
+    {
+        "key": "ctrl+`",
+        "command": "extension.vim_escape",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+capslock ctrl+`",
+        "command": "extension.vim_escape",
+        "when": "editorTextFocus"
+    },
 ]

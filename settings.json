@@ -1,4 +1,4 @@
-{   
+{
     "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontLigatures": "'ss02', 'ss03', 'ss06', 'zero'",
     "workbench.colorTheme": "Monokai Vibrant",
@@ -41,7 +41,7 @@
         // Dark theme settings not working in KDE Plasma
         "Default Dark+": {
             "titleBar.activeBackground": "#191919cc",
-            "titleBar.activeForeground":"#ffffff",
+            "titleBar.activeForeground": "#ffffff",
         },
         // green will clash with function syntax highlighing, don't make it too bright
         "editor.findMatchBackground": "#00aa00", // Current Match
@@ -54,13 +54,53 @@
             // Avoid clashing with dim yellow brackets from Bracket Pair Colorizer 2
             "strings": "#6060ff"
         },
-        "textMateRules": [{
-        "scope": ["keyword.operator"],
-        // straight ==, ===, !=, etc lines
-        "settings": {
-        "fontStyle": "" 
-        }
-    }]
+        "textMateRules": [
+            {
+                "scope": [
+                    "keyword.operator"
+                ],
+                // straight ==, ===, !=, etc lines
+                "settings": {
+                    "fontStyle": ""
+                }
+            }
+        ]
     },
-    "gitlens.codeLens.enabled": false
+    "gitlens.codeLens.enabled": false,
+    // vim setup
+    "keyboard.dispatch": "keyCode",
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "d"
+            ],
+            "after": [
+                "d",
+                "d"
+            ]
+        },
+        {
+            "before": [
+                "<C-n>"
+            ],
+            "commands": [
+                ":nohl"
+            ]
+        }
+    ],
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false
+    },
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        "--max-line-length=120"
+    ]
 }
