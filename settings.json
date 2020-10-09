@@ -37,6 +37,28 @@
         120
     ],
     "window.zoomLevel": 0,
+    "editor.tabSize": 4,
+    "editor.formatOnSave": true,
+    "python.formatting.provider": "black",
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 120,
+    "python.formatting.blackArgs": [
+        "--line-length",
+        "120"
+    ],
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        "--max-line-length=120"
+    ],
+    "[html]": {
+        "editor.tabSize": 2
+    },
+    "[javascript]": {
+        "editor.tabSize": 2
+    },
+    "[markdown]": {
+        "editor.tabSize": 2
+    },
     "workbench.colorCustomizations": {
         // Dark theme settings not working in KDE Plasma
         "Default Dark+": {
@@ -67,6 +89,7 @@
         ]
     },
     "gitlens.codeLens.enabled": false,
+    "workbench.iconTheme": "vscode-great-icons",
     // vim setup
     "keyboard.dispatch": "keyCode",
     "vim.easymotion": true,
@@ -99,8 +122,4 @@
         "<C-a>": false,
         "<C-f>": false
     },
-    "python.linting.flake8Enabled": true,
-    "python.linting.flake8Args": [
-        "--max-line-length=120"
-    ]
 }
